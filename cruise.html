@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Cruise page
+        </title>
+     </head>
+<body>
+
+<h2>Krishna Sri Rachamanti goes on a cruise</h2>
+      
+      <form>
+        <input type="checkbox" id="cabinid" name="item1"   
+          value="true" checked>
+        <label for="cabinid">Shares Cabin</label></br>
+      
+        <input type="checkbox" id="bfid" name="item2" 
+           value="true">
+        <label for="bfid">Breakfast</label></br>
+      
+        <input type="checkbox" id="poolid" name="item3"   
+           value="false" checked>
+        <label for="poolid">Pool Pass</label></br>
+
+        <input type="button" onclick="selectCruise()" value="Select a cruise">
+      </form>
+      
+
+
+<p id="result"> Selected cruise </p>
+
+<script> 
+ //my_cruise = {shared=false,breakfast=false,pool=false};
+ let my_cruise = {};
+function selectCruise() {
+    console.log("Getting input")
+    my_cruise = {};
+     cabin = document.getElementById("cabinid").checked
+     bf = document.getElementById("bfid").checked
+     poolp = document.getElementById("poolid").checked
+    
+    out = document.getElementById("result")
+    //my_cruise={"shared":cabin,"breakfast":bf,"pool":poolp};  
+    my_cruise["shared"]=cabin;
+    my_cruise["breakfast"]=bf;
+    my_cruise["pool"]=poolp;
+    console.log(my_cruise);
+    out.innerHTML = JSON.stringify(my_cruise)
+
+}
+</script>
+
+<form>
+    <input type="text" id="daysid" name="days"   
+      value="days" >
+    <label for="daysid">Enter the number of days</label></br>
+  
+    <input type="text" id="priceid" name="price"  >
+    <label for="priceid">Enter price</label></br>
+
+    <input type="button" onclick="updateCruise()" value="Update the cruise">
+  </form>
+  <p id="result1">Updated cruise</p>
+  <script> 
+   function updateCruise() {
+       console.log("Getting input")
+       days = document.getElementById("daysid").value
+       price = document.getElementById("priceid").value
+       
+       out = document.getElementById("result1")
+       //my_cruise={"days":days,"price":price};
+       my_cruise["Days"]=days;
+       my_cruise["Price"]=price;
+       console.log(my_cruise);
+       out.innerHTML = JSON.stringify(my_cruise)
+   
+   }
+   </script>
+
+</body>
+</html> 
