@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Tips page
+        </title>
+     </head>
+<body>
+
+<h2>Krishna Sri Rachamanti shows tip amounts</h2>
+
+<form>
+    <label for="baseamt">Enter base amount</label>
+    <input type ="number" id="baseamt" name="baseamt" value=50> <br>
+
+    <label for="tip">Enter the tip percent</label>
+    <input type ="number" id="tip" name="tip" value=15> <br>
+
+    <input type="button" onclick="tips()" value="Show tip">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function tips (){
+    console.log("Getting form values")
+    base = document.getElementById("baseamt").value
+    tip =parseInt(document.getElementById("tip").value)
+    let myOutput="";
+    for(i=0; i<5;i++){
+        myOutput=myOutput+tip+"% is "+(base*(tip/100)).toFixed(1)+";  ";
+        tip=tip+4;
+    }
+    
+     document.getElementById("result").innerHTML="Tips are: "+myOutput
+}
+</script>
+
+
+
+<form>
+    <input type="radio" id="sumid" name="arithmetic" value="sum" onclick="chooseOp()">
+    <label for="sumid">sum</label></br>
+  
+    <input type="radio" id="diffid" name="arithmetic" onclick="chooseOp()" 
+       value="difference">
+    <label for="diffid">diff</label></br>
+  
+    <input type="radio" id="multid" name="arithmetic" onclick="chooseOp()" 
+       value="product">
+    <label for="multid">mult</label></br>
+
+    <p id="result1">This text will be replaced </p>
+
+</form>
+
+<script> 
+function chooseOp() {
+console.log("Getting input")
+ var base1 = parseInt(document.getElementById("baseamt").value);
+console.log(base1);
+ var tipp = parseInt(document.getElementById("tip").value);
+console.log(tipp);
+if(document.getElementById("sumid").checked){
+    sum=base1+tipp;
+    document.getElementById("result1").innerHTML = "Sum of "+base1+" and "+tipp+" : "+sum;
+} 
+else if(document.getElementById("diffid").checked){
+    document.getElementById("result1").innerHTML = "Difference of "+base1+" and "+tipp+" : "+Math.abs(base1-tipp);
+
+}
+else {
+    document.getElementById("result1").innerHTML = "Product of "+base1+" and "+tipp+" : "+base1*tipp;
+
+}
+}
+
+</script>
+</body>
+</html> 
