@@ -4,25 +4,29 @@
         <title>
             Cruise page
         </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      </head>
 <body>
 
 <h2>Krishna Sri Rachamanti goes on a cruise</h2>
       
       <form>
+        <div class="form-check">
         <input type="checkbox" id="cabinid" name="item1"   
           value="true" checked>
         <label for="cabinid">Shares Cabin</label></br>
-      
+        </div>
+        <div class="form-check">
         <input type="checkbox" id="bfid" name="item2" 
-           value="true">
+           value="true" checked>
         <label for="bfid">Breakfast</label></br>
-      
+        </div>
+        <div class="form-check">
         <input type="checkbox" id="poolid" name="item3"   
-           value="false" checked>
+           value="false" >
         <label for="poolid">Pool Pass</label></br>
-
-        <input type="button" onclick="selectCruise()" value="Select a cruise">
+        </div>
+        <input type="button" class="btn btn-primary" onclick="selectCruise()" value="Select a cruise">
       </form>
       
 
@@ -51,14 +55,22 @@ function selectCruise() {
 </script>
 
 <form>
+  <div class="mb-3">
+    <label for="daysid">Enter the number of days</label>
     <input type="text" id="daysid" name="days"   
       value="days" >
-    <label for="daysid">Enter the number of days</label></br>
-  
-    <input type="text" id="priceid" name="price"  >
-    <label for="priceid">Enter price</label></br>
+    </br>
+  </div>
 
-    <input type="button" onclick="updateCruise()" value="Update the cruise">
+    <div class="mb-3">
+      <label for="priceid">Enter price</label>
+    <input type="text" id="priceid" name="price"  >
+    </br>
+  </div>
+
+    <div class="mb-3">
+    <input type="button" class="btn btn-success" onclick="updateCruise()" value="Update the cruise">
+  </div>
   </form>
   <p id="result1">Updated cruise</p>
   <script> 

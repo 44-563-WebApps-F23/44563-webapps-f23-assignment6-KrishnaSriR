@@ -4,19 +4,24 @@
         <title>
             Tips page
         </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      </head>
 <body>
 
 <h2>Krishna Sri Rachamanti shows tip amounts</h2>
 
 <form>
+    <div class="mb-3">
     <label for="baseamt">Enter base amount</label>
     <input type ="number" id="baseamt" name="baseamt" value=50> <br>
-
+    </div>
+    <div class="mb-3">
     <label for="tip">Enter the tip percent</label>
     <input type ="number" id="tip" name="tip" value=15> <br>
-
-    <input type="button" onclick="tips()" value="Show tip">
+    </div>
+    <div class="mb-3">
+    <input type="button" class="btn btn-success" onclick="tips()" value="Show tip">
+    </div>
 </form>
 
 
@@ -78,5 +83,7 @@ else {
 }
 
 </script>
+
+
 </body>
 </html> 
